@@ -26,11 +26,11 @@ async function copyAddress() {
       <code class="block break-words text-xl font-black leading-tight tracking-tight text-cozi-ink sm:text-2xl">{{ siteConfig.serverAddress }}</code>
       <small class="block text-xs font-extrabold text-cozi-muted">{{ siteConfig.minecraftVersion }}</small>
     </div>
-    <button class="inline-flex min-h-11 w-full items-center justify-center gap-2 rounded-md bg-cozi-leaf-dark px-4 py-2.5 font-black text-white hover:bg-cozi-leaf sm:w-auto" type="button" @click="copyAddress">
+    <button class="btn-primary w-full sm:w-auto" type="button" @click="copyAddress">
       <Icon :name="copied ? 'lucide:check' : 'lucide:copy'" aria-hidden="true" />
       {{ copied ? 'Copied' : 'Copy IP' }}
     </button>
-    <p v-if="copyFailed" class="m-0 text-sm text-amber-800 sm:col-span-2">
+    <p v-if="copyFailed" class="m-0 text-sm text-light-bronze-300 sm:col-span-2">
       Copy failed. Select the address above and copy it manually.
     </p>
   </div>

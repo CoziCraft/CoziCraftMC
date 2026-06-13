@@ -32,4 +32,8 @@ test-results/
 
 # Local planning and mockup scratch space
 .superpowers/
-.agents/
+.agents/*
+!.agents/skills/
+.agents/skills/*
+!.agents/skills/yeet/
+!.agents/skills/yeet/SKILL.md

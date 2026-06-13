@@ -10,7 +10,7 @@ function closeMenu() {
   <header class="sticky top-0 z-20 border-b border-cozi-line/70 bg-cozi-soft/95 backdrop-blur-xl">
     <div class="container-cozi flex min-h-16 items-center justify-between gap-4 sm:min-h-[72px]">
       <NuxtLink class="flex items-center gap-3 no-underline" to="/" aria-label="CoziCraft home" @click="closeMenu">
-        <span class="grid size-10 place-items-center rounded-md border-2 border-cozi-ink bg-cozi-leaf font-black text-white sm:size-11">C</span>
+        <span class="grid size-10 place-items-center rounded-md border-2 border-cozi-leaf bg-tea-green-500 font-black text-cozi-leaf-dark sm:size-11">C</span>
         <span>
           <strong class="block text-lg leading-tight sm:text-xl">{{ siteConfig.name }}</strong>
           <small class="block text-xs font-bold leading-tight text-cozi-muted">{{ siteConfig.minecraftVersion }}</small>
@@ -44,7 +44,7 @@ function closeMenu() {
           {{ item.label }}
         </NuxtLink>
         <NuxtLink
-          class="rounded-md bg-cozi-leaf-dark px-3 py-3 text-center font-extrabold text-white no-underline hover:bg-cozi-leaf md:py-2"
+          class="btn-nav-primary"
           to="/play"
           @click="closeMenu"
         >

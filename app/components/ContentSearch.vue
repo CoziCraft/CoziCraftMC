@@ -124,20 +124,20 @@ watch(query, () => {
       <input
         id="content-search-input"
         v-model="query"
-        class="min-h-11 w-full rounded-md border border-cozi-line bg-white/80 py-2 pl-10 pr-3 font-semibold text-cozi-ink outline-none ring-cozi-leaf/20 placeholder:text-cozi-muted/70 focus:border-cozi-leaf focus:ring-4 sm:min-h-12"
+        class="min-h-11 w-full rounded-md border border-cozi-line bg-cornsilk-900/80 py-2 pl-10 pr-3 font-semibold text-cozi-ink outline-none ring-cozi-leaf/20 placeholder:text-cozi-muted/70 focus:border-cozi-leaf focus:ring-4 sm:min-h-12"
         placeholder="Search wiki, rules, FAQ, and news"
         type="search"
       >
     </div>
 
-    <p v-if="errorMessage" class="mb-0 mt-3 text-sm font-semibold text-amber-800">{{ errorMessage }}</p>
+    <p v-if="errorMessage" class="mb-0 mt-3 text-sm font-semibold text-light-bronze-300">{{ errorMessage }}</p>
     <p v-else-if="isSearching" class="mb-0 mt-3 text-sm font-semibold text-cozi-muted">Searching...</p>
 
     <div v-if="results.length" class="mt-4 grid gap-2">
       <NuxtLink
         v-for="result in results"
         :key="`${result.collection}-${result.id}`"
-        class="rounded-md border border-cozi-line/80 bg-white/70 p-3 no-underline hover:border-cozi-leaf hover:bg-white"
+        class="rounded-md border border-cozi-line/80 bg-cornsilk-900/70 p-3 no-underline hover:border-cozi-leaf hover:bg-cornsilk-900"
         :to="resultPath(result)"
       >
         <span class="text-xs font-black uppercase tracking-wide text-cozi-gold">{{ resultLabel(result.collection) }}</span>

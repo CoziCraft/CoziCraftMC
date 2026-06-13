@@ -54,11 +54,11 @@ useSeoMeta({
           </div>
           <CopyServerAddress />
           <div class="grid grid-cols-2 gap-3 sm:flex sm:flex-wrap">
-            <NuxtLink class="inline-flex min-h-11 items-center justify-center gap-2 rounded-md bg-cozi-leaf-dark px-4 py-2.5 font-black text-white no-underline hover:bg-cozi-leaf" to="/play">
+            <NuxtLink class="btn-primary" to="/play">
               <Icon name="lucide:play" aria-hidden="true" />
               Join Guide
             </NuxtLink>
-            <NuxtLink class="inline-flex min-h-11 items-center justify-center gap-2 rounded-md border border-cozi-line bg-cozi-paper px-4 py-2.5 font-black text-cozi-ink no-underline hover:border-cozi-leaf" to="/wiki">
+            <NuxtLink class="btn-secondary" to="/wiki">
               <Icon name="lucide:book-open" aria-hidden="true" />
               Wiki
             </NuxtLink>
