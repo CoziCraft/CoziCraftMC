@@ -39,8 +39,8 @@ useSeoMeta({
     <section class="py-12 sm:py-16 lg:py-24">
       <div class="container-cozi grid items-center gap-8 lg:grid-cols-[minmax(0,0.92fr)_minmax(360px,1.08fr)] lg:gap-14">
         <motion.div
-          :initial="{ opacity: 0, y: 18 }"
-          :animate="{ opacity: 1, y: 0 }"
+          :initial="{ y: 18 }"
+          :animate="{ y: 0 }"
           :transition="{ duration: 0.28 }"
           class="grid gap-5"
         >

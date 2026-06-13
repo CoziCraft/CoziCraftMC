@@ -16,5 +16,5 @@ test('wiki page lists categories and searches public content', async ({ page }) 
   await expect(page.getByRole('link', { name: /Getting Started/ })).toBeVisible()
 
   await page.getByPlaceholder('Search wiki, rules, FAQ, and news').fill('claims')
-  await expect(page.getByRole('link', { name: /Claims/ })).toBeVisible()
+  await expect(page.getByRole('region', { name: 'Search The Server Guide' }).getByRole('link', { name: /Claims/ })).toBeVisible()
 })

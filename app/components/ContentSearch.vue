@@ -13,10 +13,41 @@ const errorMessage = ref('')
 
 const { search, status, init } = useSearchCollection(['pages', 'wiki', 'faq', 'news'], {
   ignoredTags: ['script', 'style'],
+  immediate: false,
 })
+let indexPromise: Promise<unknown> | undefined
+
+function ensureSearchIndex() {
+  if (!indexPromise || status.value === 'error') {
+    indexPromise = init().catch((error) => {
+      indexPromise = undefined
+      throw error
+    })
+  }
+
+  return indexPromise
+}
 
 function resultPath(result: SearchResultItem) {
-  return result.id.startsWith('/') ? result.id : `/${result.id.replace(/\.md$/, '')}`
+  const id = result.id.split('#')[0] ?? result.id
+  const path = id.replace(/\.md$/, '')
+
+  return path.startsWith('/') ? path : `/${path}`
+}
+
+function dedupeResults(items: SearchResultItem[]) {
+  const seen = new Set<string>()
+
+  return items.filter((result) => {
+    const key = `${result.collection}:${resultPath(result)}:${result.title}`
+
+    if (seen.has(key)) {
+      return false
+    }
+
+    seen.add(key)
+    return true
+  })
 }
 
 function resultLabel(collection: string) {
@@ -28,6 +59,13 @@ function resultLabel(collection: string) {
   }
 
   return labels[collection] ?? collection
+}
+
+function resultSummary(content: string) {
+  return content
+    .replace(/([a-z])([A-Z])/g, '$1 $2')
+    .replace(/\s+/g, ' ')
+    .trim()
 }
 
 async function runSearch() {
@@ -42,18 +80,28 @@ async function runSearch() {
   isSearching.value = true
 
   try {
-    results.value = await search(term, { limit: 8, minTermLength: 2 })
+    await ensureSearchIndex()
+
+    const matches = dedupeResults(await search(term, { limit: 12, minTermLength: 2 })).slice(0, 8)
+
+    if (query.value.trim() === term) {
+      results.value = matches
+    }
   }
   catch {
-    errorMessage.value = 'Search is warming up. Try again in a moment.'
+    if (query.value.trim() === term) {
+      errorMessage.value = 'Search is warming up. Try again in a moment.'
+    }
   }
   finally {
-    isSearching.value = false
+    if (query.value.trim() === term) {
+      isSearching.value = false
+    }
   }
 }
 
 onMounted(() => {
-  init().catch(() => {
+  ensureSearchIndex().catch(() => {
     errorMessage.value = 'Search is warming up. Try again in a moment.'
   })
 })
@@ -94,7 +142,7 @@ watch(query, () => {
       >
         <span class="text-xs font-black uppercase tracking-wide text-cozi-gold">{{ resultLabel(result.collection) }}</span>
         <strong class="mt-1 block text-cozi-leaf-dark">{{ result.title }}</strong>
-        <span class="mt-1 line-clamp-2 block text-sm text-cozi-muted">{{ result.content }}</span>
+        <span class="mt-1 line-clamp-2 block text-sm text-cozi-muted">{{ resultSummary(result.content) }}</span>
       </NuxtLink>
     </div>
   </section>

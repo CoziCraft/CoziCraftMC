@@ -14,7 +14,7 @@ export default defineNuxtConfig({
   vite: {
     plugins: [tailwindcss()],
   },
-  devtools: { enabled: true },
+  devtools: { enabled: false },
   runtimeConfig: {
     public: {
       siteUrl: process.env.NUXT_PUBLIC_SITE_URL || 'https://cozicraftmc.com',
@@ -26,6 +26,9 @@ export default defineNuxtConfig({
   app: {
     head: {
       title: 'CoziCraft',
+      htmlAttrs: {
+        lang: 'en',
+      },
       meta: [
         {
           name: 'description',

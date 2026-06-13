@@ -10,8 +10,8 @@ import { motion } from 'motion-v'
 
     <motion.div
       class="absolute bottom-[18%] left-[14%] w-[150px]"
-      :initial="{ opacity: 0, y: 12 }"
-      :animate="{ opacity: 1, y: 0 }"
+      :initial="{ y: 12 }"
+      :animate="{ y: 0 }"
       :transition="{ duration: 0.34 }"
     >
       <div class="mx-auto h-0 w-0 border-x-[82px] border-b-[60px] border-x-transparent border-b-[#8f6a45]" />
