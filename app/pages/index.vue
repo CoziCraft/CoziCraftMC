@@ -36,29 +36,29 @@ useSeoMeta({
 
 <template>
   <div>
-    <section class="py-12 sm:py-16 lg:py-24">
-      <div class="container-cozi grid items-center gap-8 lg:grid-cols-[minmax(0,0.92fr)_minmax(360px,1.08fr)] lg:gap-14">
+    <section class="py-8 sm:py-14 lg:py-20">
+      <div class="container-cozi grid items-center gap-6 lg:grid-cols-[minmax(0,0.92fr)_minmax(360px,1.08fr)] lg:gap-14">
         <motion.div
           :initial="{ y: 18 }"
           :animate="{ y: 0 }"
           :transition="{ duration: 0.28 }"
-          class="grid gap-5"
+          class="grid gap-4 sm:gap-5"
         >
-          <p class="m-0 inline-flex w-fit items-center gap-2 rounded-md border border-cozi-line bg-cozi-paper/80 px-3 py-1 text-sm font-black text-cozi-muted">
+          <p class="m-0 inline-flex w-fit items-center gap-2 rounded-md border border-cozi-line bg-cozi-paper/80 px-3 py-1 text-xs font-black text-cozi-muted sm:text-sm">
             <Icon name="lucide:pickaxe" aria-hidden="true" />
             Minecraft Java {{ siteConfig.minecraftVersion.replace('Java ', '') }}
           </p>
-          <div class="grid gap-4">
-            <h1 class="m-0 text-5xl font-black leading-none text-cozi-leaf-dark sm:text-6xl lg:text-7xl">CoziCraft</h1>
-            <p class="m-0 max-w-2xl text-lg font-semibold leading-8 text-cozi-muted sm:text-xl">{{ siteConfig.tagline }}</p>
+          <div class="grid gap-3 sm:gap-4">
+            <h1 class="m-0 text-4xl font-black leading-none text-cozi-leaf-dark sm:text-6xl lg:text-7xl">CoziCraft</h1>
+            <p class="m-0 max-w-2xl text-base font-semibold leading-7 text-cozi-muted sm:text-xl sm:leading-8">{{ siteConfig.tagline }}</p>
           </div>
           <CopyServerAddress />
-          <div class="flex flex-wrap gap-3">
-            <NuxtLink class="inline-flex min-h-11 items-center gap-2 rounded-md bg-cozi-leaf-dark px-4 py-2.5 font-black text-white no-underline hover:bg-cozi-leaf" to="/play">
+          <div class="grid grid-cols-2 gap-3 sm:flex sm:flex-wrap">
+            <NuxtLink class="inline-flex min-h-11 items-center justify-center gap-2 rounded-md bg-cozi-leaf-dark px-4 py-2.5 font-black text-white no-underline hover:bg-cozi-leaf" to="/play">
               <Icon name="lucide:play" aria-hidden="true" />
               Join Guide
             </NuxtLink>
-            <NuxtLink class="inline-flex min-h-11 items-center gap-2 rounded-md border border-cozi-line bg-cozi-paper px-4 py-2.5 font-black text-cozi-ink no-underline hover:border-cozi-leaf" to="/wiki">
+            <NuxtLink class="inline-flex min-h-11 items-center justify-center gap-2 rounded-md border border-cozi-line bg-cozi-paper px-4 py-2.5 font-black text-cozi-ink no-underline hover:border-cozi-leaf" to="/wiki">
               <Icon name="lucide:book-open" aria-hidden="true" />
               Wiki
             </NuxtLink>
@@ -69,22 +69,24 @@ useSeoMeta({
       </div>
     </section>
 
-    <section class="bg-cozi-paper/55 py-10 sm:py-14">
+    <section class="bg-cozi-paper/55 py-8 sm:py-14">
       <div class="container-cozi grid gap-4 md:grid-cols-3">
         <NuxtLink
           v-for="link in quickLinks"
           :key="link.to"
-          class="rounded-lg border border-cozi-line bg-cozi-paper p-5 no-underline shadow-cozi transition hover:-translate-y-0.5 hover:border-cozi-leaf"
+          class="grid grid-cols-[auto_1fr] items-start gap-3 rounded-lg border border-cozi-line bg-cozi-paper p-4 no-underline shadow-cozi transition hover:-translate-y-0.5 hover:border-cozi-leaf sm:block sm:p-5"
           :to="link.to"
         >
-          <Icon class="mb-4 text-2xl text-cozi-leaf" :name="link.icon" aria-hidden="true" />
-          <h2 class="m-0 text-xl font-black text-cozi-leaf-dark">{{ link.title }}</h2>
-          <p class="mb-0 mt-2 text-sm font-semibold leading-6 text-cozi-muted">{{ link.description }}</p>
+          <Icon class="mt-0.5 text-2xl text-cozi-leaf sm:mb-4" :name="link.icon" aria-hidden="true" />
+          <div>
+            <h2 class="m-0 text-lg font-black leading-tight text-cozi-leaf-dark sm:text-xl">{{ link.title }}</h2>
+            <p class="mb-0 mt-1 text-sm font-semibold leading-6 text-cozi-muted sm:mt-2">{{ link.description }}</p>
+          </div>
         </NuxtLink>
       </div>
     </section>
 
-    <section class="py-10 sm:py-14">
+    <section class="py-8 sm:py-14">
       <div class="container-cozi grid gap-6 lg:grid-cols-[minmax(0,0.95fr)_minmax(320px,0.75fr)]">
         <ContentSearch />
 

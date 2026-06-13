@@ -114,7 +114,7 @@ watch(query, () => {
 <template>
   <section class="rounded-lg border border-cozi-line bg-cozi-paper/90 p-4 shadow-cozi sm:p-5" aria-labelledby="content-search-title">
     <div class="mb-3 flex items-center justify-between gap-3">
-      <h2 id="content-search-title" class="m-0 text-lg font-black text-cozi-leaf-dark">Search The Server Guide</h2>
+      <h2 id="content-search-title" class="m-0 text-base font-black text-cozi-leaf-dark sm:text-lg">Search The Server Guide</h2>
       <span class="text-xs font-extrabold uppercase tracking-wide text-cozi-muted">{{ status }}</span>
     </div>
 
@@ -124,7 +124,7 @@ watch(query, () => {
       <input
         id="content-search-input"
         v-model="query"
-        class="min-h-12 w-full rounded-md border border-cozi-line bg-white/80 py-2 pl-10 pr-3 font-semibold text-cozi-ink outline-none ring-cozi-leaf/20 placeholder:text-cozi-muted/70 focus:border-cozi-leaf focus:ring-4"
+        class="min-h-11 w-full rounded-md border border-cozi-line bg-white/80 py-2 pl-10 pr-3 font-semibold text-cozi-ink outline-none ring-cozi-leaf/20 placeholder:text-cozi-muted/70 focus:border-cozi-leaf focus:ring-4 sm:min-h-12"
         placeholder="Search wiki, rules, FAQ, and news"
         type="search"
       >
