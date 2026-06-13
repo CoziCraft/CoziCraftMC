@@ -1,0 +1,98 @@
+@import "tailwindcss";
+
+@theme {
+  --font-sans: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  --color-cozi-ink: #263024;
+  --color-cozi-muted: #5d694f;
+  --color-cozi-soft: #f8f3e7;
+  --color-cozi-paper: #fffdf7;
+  --color-cozi-leaf: #537f43;
+  --color-cozi-leaf-dark: #263f26;
+  --color-cozi-gold: #c69738;
+  --color-cozi-blue: #718bb6;
+  --color-cozi-line: #d8cba7;
+  --shadow-cozi: 0 18px 46px rgba(46, 60, 40, 0.14);
+}
+
+@utility container-cozi {
+  width: min(100% - 2rem, 1180px);
+  margin-inline: auto;
+}
+
+@layer base {
+  html {
+    @apply min-w-80 scroll-smooth bg-cozi-soft text-cozi-ink;
+  }
+
+  body {
+    @apply m-0 font-sans text-base leading-7;
+    background:
+      linear-gradient(180deg, rgba(248, 243, 231, 0.92), rgba(255, 253, 247, 0.98)),
+      radial-gradient(circle at 10% 10%, rgba(83, 127, 67, 0.16), transparent 32%),
+      radial-gradient(circle at 80% 0%, rgba(198, 151, 56, 0.14), transparent 26%);
+  }
+
+  a {
+    @apply underline-offset-4 decoration-cozi-leaf/40 hover:decoration-current;
+  }
+
+  button,
+  input {
+    font: inherit;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+      scroll-behavior: auto !important;
+    }
+  }
+}
+
+@layer components {
+  .content-prose {
+    @apply max-w-none text-cozi-ink;
+  }
+
+  .content-prose h1 {
+    @apply mb-5 text-4xl font-black leading-tight text-cozi-leaf-dark sm:text-5xl;
+  }
+
+  .content-prose h2 {
+    @apply mt-10 mb-3 text-2xl font-black leading-tight text-cozi-leaf-dark;
+  }
+
+  .content-prose h3 {
+    @apply mt-7 mb-2 text-xl font-extrabold text-cozi-leaf-dark;
+  }
+
+  .content-prose p {
+    @apply my-4 text-cozi-muted;
+  }
+
+  .content-prose ul,
+  .content-prose ol {
+    @apply my-4 pl-6 text-cozi-muted;
+  }
+
+  .content-prose ul {
+    @apply list-disc;
+  }
+
+  .content-prose ol {
+    @apply list-decimal;
+  }
+
+  .content-prose li {
+    @apply my-2;
+  }
+
+  .content-prose a {
+    @apply font-semibold text-cozi-leaf underline decoration-cozi-leaf/35 underline-offset-4;
+  }
+
+  .content-prose code {
+    @apply rounded bg-cozi-leaf-dark px-1.5 py-0.5 text-sm font-semibold text-cozi-paper;
+  }
+}
