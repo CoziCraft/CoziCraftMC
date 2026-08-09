@@ -12,9 +12,8 @@ const latestPost = computed(() => latestNews.value?.[0])
 
 const adventures = [
   { title: 'Build homes', description: 'Cottages, workshops, bridges, and one very ambitious roof.', to: '/wiki/getting-started', icon: 'lucide:house' },
-  { title: 'Find biomes', description: 'Cherry groves, caves, rivers, forests, and a new favorite view.', to: '/wiki/getting-started', icon: 'lucide:flower-2' },
   { title: 'Grow farms', description: 'Plant crops, keep bees, and make every path a little prettier.', to: '/wiki/economy', icon: 'lucide:wheat' },
-  { title: 'Meet animals', description: 'Find cats, foxes, frogs, and enough pets to fill the porch.', to: '/faq', icon: 'lucide:paw-print' },
+  { title: 'Fish RPG', description: 'Level up your fishing with PyroFishing, rare catches, and new rewards.', to: '/wiki/economy', icon: 'lucide:fish' },
   { title: 'Go mining', description: 'Pack snacks, light the caves, and bring something shiny home.', to: '/wiki/commands', icon: 'lucide:pickaxe' },
 ]
 
@@ -79,7 +78,7 @@ useSeoMeta({
         </div>
         <p class="m-0 text-cozi-muted">Start small or build a whole district. The useful pages stay close when you need a rule, command, or new route.</p>
       </div>
-      <div class="grid gap-3 sm:grid-cols-2 xl:grid-cols-5">
+      <div class="grid gap-3 sm:grid-cols-2 xl:grid-cols-4">
         <NuxtLink
           v-for="(adventure, index) in adventures"
           :key="adventure.title"

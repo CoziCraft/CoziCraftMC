@@ -7,6 +7,9 @@ test('home page exposes the CoziCraft join path', async ({ page }) => {
   await expect(page.getByText('play.cozicraftmc.com')).toBeVisible()
   await expect(page.locator('#main-content').getByText('Java 26.2', { exact: true }).first()).toBeVisible()
   await expect(page.getByLabel('Primary navigation').getByRole('link', { name: 'Wiki' })).toBeVisible()
+  await expect(page.getByRole('heading', { name: 'Fish RPG' })).toBeVisible()
+  await expect(page.getByText('PyroFishing', { exact: false })).toBeVisible()
+  await expect(page.getByRole('heading', { name: 'Find biomes' })).toHaveCount(0)
 })
 
 test('wiki page lists categories and searches public content', async ({ page }) => {
