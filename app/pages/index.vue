@@ -21,6 +21,37 @@ function gentleHover(scale = 1.025, rotate = 0) {
   return reducedMotion.value ? {} : { scale, rotate }
 }
 
+function adventureIconVariants(title: string) {
+  const resting = { opacity: 1, rotate: 0, scale: 1, x: 0, y: 0 }
+
+  if (reducedMotion.value) {
+    return { resting, hovered: resting }
+  }
+
+  if (title === 'Fish RPG') {
+    return {
+      resting,
+      hovered: {
+        opacity: [1, 1, 0],
+        rotate: [0, -6, 3],
+        scale: [1, 1.06, 0.92],
+        x: [0, 9, 26],
+        y: [0, -2, 1],
+        transition: { duration: 0.48 },
+      },
+    }
+  }
+
+  return {
+    resting,
+    hovered: {
+      rotate: -4,
+      scale: 1.08,
+      transition: { duration: 0.2 },
+    },
+  }
+}
+
 const { data: latestNews } = await useAsyncData('home-latest-news', () => {
   return queryCollection('news').order('date', 'DESC').limit(1).all()
 })
@@ -124,10 +155,17 @@ useSeoMeta({
           >
             <motion.span
               class="mb-8 grid size-11 place-items-center rounded-xl bg-cozi-amber text-xl text-cozi-night transition group-hover:bg-cozi-amber-soft"
-              :while-hover="gentleHover(1.08, -4)"
-              :transition="revealTransition()"
+              initial="resting"
+              while-hover="hovered"
+              :data-testid="adventure.title === 'Fish RPG' ? 'fish-rpg-icon-trigger' : undefined"
             >
-              <Icon :name="adventure.icon" aria-hidden="true" />
+              <motion.span
+                class="inline-flex"
+                :data-testid="adventure.title === 'Fish RPG' ? 'fish-rpg-icon' : undefined"
+                :variants="adventureIconVariants(adventure.title)"
+              >
+                <Icon :name="adventure.icon" aria-hidden="true" />
+              </motion.span>
             </motion.span>
             <h3 class="m-0 font-display text-2xl font-bold leading-tight text-cozi-cream">{{ adventure.title }}</h3>
             <p class="mt-2 mb-0 text-sm leading-6 text-cozi-muted">{{ adventure.description }}</p>

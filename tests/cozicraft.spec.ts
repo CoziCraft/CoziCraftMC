@@ -11,6 +11,12 @@ test('home page exposes the CoziCraft join path', async ({ page }) => {
   await expect(page.getByRole('heading', { name: 'Fish RPG' })).toBeVisible()
   await expect(page.getByText('PyroFishing', { exact: false })).toBeVisible()
   await expect(page.getByRole('heading', { name: 'Find biomes' })).toHaveCount(0)
+
+  await page.getByTestId('fish-rpg-icon-trigger').hover()
+  await expect(page.getByTestId('fish-rpg-icon')).toHaveCSS('opacity', '0')
+
+  await page.getByRole('heading', { name: 'Make the night yours.' }).hover()
+  await expect(page.getByTestId('fish-rpg-icon')).toHaveCSS('opacity', '1')
 })
 
 test('wiki page lists categories and searches public content', async ({ page }) => {
