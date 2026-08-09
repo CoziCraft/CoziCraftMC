@@ -1,9 +1,10 @@
 <script setup lang="ts">
-import { motion, useReducedMotion } from 'motion-v'
+import { motion, useAnimationControls, useReducedMotion } from 'motion-v'
 
 const runtimeConfig = useRuntimeConfig()
 const discordUrl = computed(() => cleanOptionalUrl(runtimeConfig.public.discordUrl))
 const reducedMotion = useReducedMotion()
+const fishControls = useAnimationControls()
 const revealTarget = { opacity: 1, y: 0 }
 
 function revealInitial(distance = 16) {
@@ -21,25 +22,50 @@ function gentleHover(scale = 1.025, rotate = 0) {
   return reducedMotion.value ? {} : { scale, rotate }
 }
 
-function adventureIconVariants(title: string) {
+function resetFish() {
+  fishControls.set({ opacity: 1, rotate: 0, scale: 1, x: 0, y: 0 })
+}
+
+function swimFishAway() {
+  if (reducedMotion.value) {
+    resetFish()
+    return
+  }
+
+  fishControls.stop()
+  void fishControls.start({
+    opacity: [1, 1, 0],
+    rotate: [0, -6, 3],
+    scale: [1, 1.06, 0.92],
+    x: [0, 9, 26],
+    y: [0, -2, 1],
+    transition: { duration: 0.48 },
+  })
+}
+
+function returnFishFromLeft() {
+  if (reducedMotion.value) {
+    resetFish()
+    return
+  }
+
+  fishControls.stop()
+  fishControls.set({ opacity: 0, rotate: -3, scale: 0.92, x: -26, y: 1 })
+  void fishControls.start({
+    opacity: [0, 1, 1],
+    rotate: [-3, 5, 0],
+    scale: [0.92, 1.06, 1],
+    x: [-26, -9, 0],
+    y: [1, -2, 0],
+    transition: { duration: 0.48 },
+  })
+}
+
+function adventureIconVariants() {
   const resting = { opacity: 1, rotate: 0, scale: 1, x: 0, y: 0 }
 
   if (reducedMotion.value) {
     return { resting, hovered: resting }
-  }
-
-  if (title === 'Fish RPG') {
-    return {
-      resting,
-      hovered: {
-        opacity: [1, 1, 0],
-        rotate: [0, -6, 3],
-        scale: [1, 1.06, 0.92],
-        x: [0, 9, 26],
-        y: [0, -2, 1],
-        transition: { duration: 0.48 },
-      },
-    }
   }
 
   return {
@@ -158,11 +184,22 @@ useSeoMeta({
               initial="resting"
               while-hover="hovered"
               :data-testid="adventure.title === 'Fish RPG' ? 'fish-rpg-icon-trigger' : undefined"
+              @pointerenter="adventure.title === 'Fish RPG' && swimFishAway()"
+              @pointerleave="adventure.title === 'Fish RPG' && returnFishFromLeft()"
             >
               <motion.span
+                v-if="adventure.title === 'Fish RPG'"
                 class="inline-flex"
-                :data-testid="adventure.title === 'Fish RPG' ? 'fish-rpg-icon' : undefined"
-                :variants="adventureIconVariants(adventure.title)"
+                data-testid="fish-rpg-icon"
+                :animate="fishControls"
+                :initial="{ opacity: 1, rotate: 0, scale: 1, x: 0, y: 0 }"
+              >
+                <Icon :name="adventure.icon" aria-hidden="true" />
+              </motion.span>
+              <motion.span
+                v-else
+                class="inline-flex"
+                :variants="adventureIconVariants()"
               >
                 <Icon :name="adventure.icon" aria-hidden="true" />
               </motion.span>

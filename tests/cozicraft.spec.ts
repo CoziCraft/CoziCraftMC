@@ -16,6 +16,11 @@ test('home page exposes the CoziCraft join path', async ({ page }) => {
   await expect(page.getByTestId('fish-rpg-icon')).toHaveCSS('opacity', '0')
 
   await page.getByRole('heading', { name: 'Make the night yours.' }).hover()
+  await page.waitForTimeout(60)
+  const returningFishX = await page.getByTestId('fish-rpg-icon').evaluate((element) => {
+    return new DOMMatrixReadOnly(getComputedStyle(element).transform).m41
+  })
+  expect(returningFishX).toBeLessThan(0)
   await expect(page.getByTestId('fish-rpg-icon')).toHaveCSS('opacity', '1')
 })
 
