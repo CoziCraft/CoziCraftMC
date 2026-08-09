@@ -7,7 +7,7 @@ The v1 site is static-first: content lives in markdown, wiki edits happen throug
 ## Server Details
 
 - Server address: `play.cozicraftmc.com`
-- Minecraft version: Java `1.21.11`
+- Minecraft version: Java `26.2`
 - Game/community name: `CoziCraft`
 
 ## Stack

@@ -1,6 +1,6 @@
 ---
 title: Play CoziCraft
-description: Join CoziCraft on Minecraft Java 1.21.11.
+description: Join CoziCraft on Minecraft Java 26.2.
 section: Play
 order: 1
 tags:
@@ -13,7 +13,7 @@ tags:
 
 Connect from Minecraft Java Edition with `play.cozicraftmc.com`.
 
-CoziCraft currently supports Java `1.21.11`. Add the server to your multiplayer list, join when you are ready, and check the wiki if you want a calm first path through the server.
+CoziCraft currently supports Java `26.2`. Add the server to your multiplayer list, join when you are ready, and check the wiki if you want a calm first path through the server.
 
 ## First Steps
 

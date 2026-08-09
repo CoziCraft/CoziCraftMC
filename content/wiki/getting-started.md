@@ -14,7 +14,7 @@ Welcome to CoziCraft. This guide is the first stop for new players who want to j
 
 ## Join The Server
 
-Use Minecraft Java Edition and connect to `play.cozicraftmc.com` on version `1.21.11`.
+Use Minecraft Java Edition and connect to `play.cozicraftmc.com` on version `26.2`.
 
 ## New Player Path
 

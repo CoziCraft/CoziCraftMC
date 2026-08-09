@@ -7,7 +7,7 @@ Status: Approved for implementation planning
 
 CoziCraft needs a fast, secure, static-first Nuxt site for a Minecraft Java community server. The site should feel like a polished server portal with small-server charm: friendly, readable, practical, and easy to hand off. The foundation should avoid auth, database work, payment logic, and runtime integrations until the project has a clear need for them.
 
-The approved v1 direction is a static Nuxt 4 + Nuxt Content site where all content lives in this repository and is edited through GitHub pull requests or commits. The site will include a homepage, play/join page, wiki, FAQ, rules, store link, contact/links page, and news/updates. The public server connection is Java-only at `play.cozicraftmc.com`, currently for Java `1.21.11`.
+The approved v1 direction is a static Nuxt 4 + Nuxt Content site where all content lives in this repository and is edited through GitHub pull requests or commits. The site will include a homepage, play/join page, wiki, FAQ, rules, store link, contact/links page, and news/updates. The public server connection is Java-only at `play.cozicraftmc.com`, currently for Java `26.2`.
 
 ## Goals
 
@@ -85,7 +85,7 @@ The homepage first viewport should prioritize:
 
 - CoziCraft identity.
 - Server address copy action for `play.cozicraftmc.com`.
-- Java version `1.21.11`.
+- Java version `26.2`.
 - Primary navigation to Play, Wiki, News, Store, and Discord/Contact.
 - A polished placeholder scene or screenshot slot that can later be replaced with real CoziCraft screenshots.
 

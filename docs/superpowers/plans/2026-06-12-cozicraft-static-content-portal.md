@@ -238,7 +238,7 @@ export type WikiCategory = {
 export const siteConfig = {
   name: 'CoziCraft',
   serverAddress: 'play.cozicraftmc.com',
-  minecraftVersion: 'Java 1.21.11',
+  minecraftVersion: 'Java 26.2',
   tagline: 'A bright Minecraft Java survival community with polished guides and a cozy pace.',
   description: 'Find the CoziCraft server address, joining guide, wiki, rules, FAQs, news, and store links.',
   contactUrl: import.meta.env.NUXT_PUBLIC_CONTACT_URL || 'mailto:hello@cozicraftmc.com',
@@ -424,7 +424,7 @@ Create `content/pages/play.md`:
 ```md
 ---
 title: Play CoziCraft
-description: Join CoziCraft on Minecraft Java 1.21.11.
+description: Join CoziCraft on Minecraft Java 26.2.
 section: Play
 order: 1
 tags:
@@ -437,7 +437,7 @@ tags:
 
 Connect from Minecraft Java Edition with `play.cozicraftmc.com`.
 
-CoziCraft currently supports Java `1.21.11`. Add the server to your multiplayer list, join when you are ready, and check the wiki if you want a calm first path through the server.
+CoziCraft currently supports Java `26.2`. Add the server to your multiplayer list, join when you are ready, and check the wiki if you want a calm first path through the server.
 
 ## First Steps
 
@@ -534,7 +534,7 @@ This page collects official CoziCraft links.
 ## Links
 
 - Server address: `play.cozicraftmc.com`
-- Version: Java `1.21.11`
+- Version: Java `26.2`
 - Store: see the [Store page](/store)
 - Wiki: start at the [Wiki home](/wiki)
 
@@ -565,7 +565,7 @@ Welcome to CoziCraft. This page gives new players the first path through the ser
 
 ## Join
 
-Use Minecraft Java Edition `1.21.11` and connect to `play.cozicraftmc.com`.
+Use Minecraft Java Edition `26.2` and connect to `play.cozicraftmc.com`.
 
 ## Before You Build
 
@@ -777,7 +777,7 @@ Use this page when players cannot connect or need basic help.
 ## Cannot Connect
 
 - Confirm you are using Minecraft Java Edition.
-- Confirm your version is `1.21.11`.
+- Confirm your version is `26.2`.
 - Confirm the address is `play.cozicraftmc.com`.
 - Restart the game and try again.
 
@@ -813,7 +813,7 @@ Use `play.cozicraftmc.com`.
 
 ## What version should I use?
 
-Use Java `1.21.11`.
+Use Java `26.2`.
 
 ## Is the store open?
 
@@ -842,7 +842,7 @@ tags:
 
 The CoziCraft website foundation is being set up as a static, GitHub-edited home for server information, wiki pages, FAQs, rules, and updates.
 
-Players can use `play.cozicraftmc.com` on Minecraft Java `1.21.11`.
+Players can use `play.cozicraftmc.com` on Minecraft Java `26.2`.
 ```
 
 - [ ] **Step 6: Verify content compiles**
@@ -1480,7 +1480,7 @@ Replace `README.md` with:
 CoziCraft is a static Nuxt + Nuxt Content site for the CoziCraft Minecraft Java community server.
 
 Server address: `play.cozicraftmc.com`  
-Current version: Java `1.21.11`
+Current version: Java `26.2`
 
 ## What This Site Does
 
@@ -1588,7 +1588,7 @@ Use a bright community portal direction: friendly, readable, polished, and calm.
 
 - CoziCraft
 - `play.cozicraftmc.com`
-- Java `1.21.11`
+- Java `26.2`
 - Play, Wiki, News, Store, and Contact links
 
 Use Motion Vue only for short, purposeful motion. Respect reduced-motion preferences.

@@ -15,7 +15,7 @@ export type WikiCategory = {
 export const siteConfig = {
   name: 'CoziCraft',
   serverAddress: 'play.cozicraftmc.com',
-  minecraftVersion: 'Java 1.21.11',
+  minecraftVersion: 'Java 26.2',
   tagline: 'Build under the cherry trees, keep too many pets, and make a corner of CoziCraft feel like yours.',
   description: 'Find the CoziCraft server address, joining guide, wiki, rules, FAQs, news, and store links.',
   fallbackContactUrl: 'mailto:hello@cozicraftmc.com',

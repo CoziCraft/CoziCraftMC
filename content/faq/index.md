@@ -16,7 +16,7 @@ Use `play.cozicraftmc.com` in Minecraft Java Edition.
 
 ## What Minecraft version should I use?
 
-CoziCraft is currently on Java `1.21.11`.
+CoziCraft is currently on Java `26.2`.
 
 ## Is this Bedrock compatible?
 

@@ -15,7 +15,7 @@ Use this page for official CoziCraft links. Keep every destination public-safe a
 ## Current Links
 
 - Server address: `play.cozicraftmc.com`
-- Minecraft version: Java `1.21.11`
+- Minecraft version: Java `26.2`
 - Store: planned
 - Discord: planned
 

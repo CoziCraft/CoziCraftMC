@@ -6,7 +6,7 @@ This repository powers the public CoziCraft Minecraft server site. Treat it as a
 
 - Brand spelling is **CoziCraft**.
 - Server address is `play.cozicraftmc.com`.
-- Current Minecraft version is Java `1.21.11`.
+- Current Minecraft version is Java `26.2`.
 - The site should feel like a polished Minecraft server portal with small-server charm.
 - Avoid generic marketing copy and AI-sounding filler.
 - Whimsy is welcome when it supports the player experience.

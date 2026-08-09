@@ -6,7 +6,7 @@ describe('site config', () => {
   it('keeps the public CoziCraft server details in one shared place', () => {
     expect(siteConfig.name).toBe('CoziCraft')
     expect(siteConfig.serverAddress).toBe('play.cozicraftmc.com')
-    expect(siteConfig.minecraftVersion).toBe('Java 1.21.11')
+    expect(siteConfig.minecraftVersion).toBe('Java 26.2')
   })
 
   it('defines the primary public sections for the v1 portal', () => {

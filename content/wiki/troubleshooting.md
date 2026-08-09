@@ -15,7 +15,7 @@ If you cannot connect, start with the simple checks before asking staff for help
 ## Connection Checklist
 
 - Confirm you are using Minecraft Java Edition.
-- Confirm your version is `1.21.11`.
+- Confirm your version is `26.2`.
 - Confirm the server address is `play.cozicraftmc.com`.
 - Restart Minecraft and try again.
 - Check whether the server has a posted maintenance notice.
