@@ -41,14 +41,14 @@ useSeoMeta({
       >
         <div class="relative min-h-[315px] overflow-hidden rounded-[28px_28px_28px_9px] border-2 border-cozi-cream/80 bg-cozi-navy shadow-cozi sm:min-h-[520px] lg:min-h-[570px]">
           <img class="absolute inset-0 size-full object-cover" src="/images/lantern-village.webp" width="1586" height="992" alt="A lantern-lit Minecraft village with cherry trees, flower-covered block houses, cats, foxes, bees, and a moonlit lake.">
-          <span class="absolute top-3 left-3 rounded-full border border-white/20 bg-cozi-plum/85 px-3 py-1.5 text-[0.62rem] font-black uppercase tracking-[0.1em] text-cozi-pink backdrop-blur sm:top-5 sm:left-5">Cherry village · map tile 004</span>
-          <span class="absolute top-5 right-5 hidden rounded-full border border-white/20 bg-cozi-night/75 px-3 py-1.5 text-[0.62rem] font-black uppercase tracking-[0.1em] text-cozi-jade-soft backdrop-blur sm:block">Spawn → lantern square</span>
+          <span class="absolute top-3 left-3 rounded-full border border-white/20 bg-cozi-plum/85 px-3 py-1.5 text-[0.62rem] font-bold uppercase tracking-[0.1em] text-cozi-pink backdrop-blur sm:top-5 sm:left-5">Cherry village · map tile 004</span>
+          <span class="absolute top-5 right-5 hidden rounded-full border border-white/20 bg-cozi-night/75 px-3 py-1.5 text-[0.62rem] font-bold uppercase tracking-[0.1em] text-cozi-jade-soft backdrop-blur sm:block">Spawn → lantern square</span>
           <figcaption class="absolute right-3 bottom-3 left-3 flex items-end justify-between gap-4 rounded-2xl border border-white/15 bg-cozi-night/85 px-4 py-3 backdrop-blur sm:right-5 sm:bottom-5 sm:left-5 sm:px-5 sm:py-4">
             <span>
-              <strong class="block font-display text-lg font-black leading-tight text-cozi-cream sm:text-2xl">Follow the lights home.</strong>
+              <strong class="block font-display text-lg font-bold leading-tight text-cozi-cream sm:text-2xl">Follow the lights home.</strong>
               <span class="hidden text-xs text-cozi-muted sm:block">Cherry roofs, cozy shops, pets, and paths worth wandering.</span>
             </span>
-            <b class="hidden shrink-0 text-[0.62rem] font-black uppercase tracking-[0.12em] text-cozi-amber md:block">Build · farm · roam</b>
+            <b class="hidden shrink-0 text-[0.62rem] font-bold uppercase tracking-[0.12em] text-cozi-amber md:block">Build · farm · roam</b>
           </figcaption>
         </div>
       </motion.figure>
@@ -73,7 +73,7 @@ useSeoMeta({
     <section class="container-cozi py-16 sm:py-24" aria-labelledby="adventures-title">
       <div class="mb-8 grid items-end gap-4 md:grid-cols-[1fr_minmax(280px,0.55fr)] md:gap-9">
         <div>
-          <p class="m-0 text-[0.68rem] font-black uppercase tracking-[0.14em] text-cozi-pink">Choose your next little project</p>
+          <p class="m-0 text-[0.68rem] font-bold uppercase tracking-[0.14em] text-cozi-pink">Choose your next little project</p>
           <h2 id="adventures-title" class="display-title mt-2 mb-0 max-w-[12ch] text-5xl sm:text-7xl">Make the night yours.</h2>
         </div>
         <p class="m-0 text-cozi-muted">Start small or build a whole district. The useful pages stay close when you need a rule, command, or new route.</p>
@@ -89,7 +89,7 @@ useSeoMeta({
           <span class="mb-8 grid size-11 place-items-center rounded-xl bg-cozi-amber text-xl text-cozi-night transition group-hover:bg-cozi-amber-soft">
             <Icon :name="adventure.icon" aria-hidden="true" />
           </span>
-          <h3 class="m-0 font-display text-2xl font-black leading-tight text-cozi-cream">{{ adventure.title }}</h3>
+          <h3 class="m-0 font-display text-2xl font-bold leading-tight text-cozi-cream">{{ adventure.title }}</h3>
           <p class="mt-2 mb-0 text-sm leading-6 text-cozi-muted">{{ adventure.description }}</p>
         </NuxtLink>
       </div>
@@ -97,18 +97,18 @@ useSeoMeta({
 
     <section class="container-cozi grid items-center gap-9 rounded-[30px] border border-cozi-amber-soft/20 bg-[linear-gradient(135deg,#21142f,#151d3e_60%,#17353d)] p-5 shadow-cozi sm:p-10 lg:grid-cols-[minmax(280px,0.6fr)_minmax(0,1.4fr)] lg:p-14" aria-labelledby="atlas-title">
       <div>
-        <p class="m-0 text-[0.68rem] font-black uppercase tracking-[0.14em] text-cozi-pink">A little atlas corner</p>
+        <p class="m-0 text-[0.68rem] font-bold uppercase tracking-[0.14em] text-cozi-pink">A little atlas corner</p>
         <h2 id="atlas-title" class="display-title mt-2 mb-0 max-w-[9ch] text-5xl sm:text-7xl">Keep the route. Lose the rush.</h2>
         <p class="mt-5 text-cozi-muted">Use the wiki for a clear first path, the FAQ for a quick answer, and the rules when you want to be a good neighbor.</p>
         <div class="mt-5 flex flex-wrap gap-2">
-          <NuxtLink class="rounded-full bg-cozi-cream px-3 py-1.5 text-xs font-black uppercase text-cozi-night no-underline" to="/wiki">Wiki</NuxtLink>
-          <NuxtLink class="rounded-full bg-cozi-cream px-3 py-1.5 text-xs font-black uppercase text-cozi-night no-underline" to="/faq">FAQ</NuxtLink>
-          <NuxtLink class="rounded-full bg-cozi-cream px-3 py-1.5 text-xs font-black uppercase text-cozi-night no-underline" to="/rules">Rules</NuxtLink>
+          <NuxtLink class="rounded-full bg-cozi-cream px-3 py-1.5 text-xs font-bold uppercase text-cozi-night no-underline" to="/wiki">Wiki</NuxtLink>
+          <NuxtLink class="rounded-full bg-cozi-cream px-3 py-1.5 text-xs font-bold uppercase text-cozi-night no-underline" to="/faq">FAQ</NuxtLink>
+          <NuxtLink class="rounded-full bg-cozi-cream px-3 py-1.5 text-xs font-bold uppercase text-cozi-night no-underline" to="/rules">Rules</NuxtLink>
         </div>
       </div>
       <figure class="relative m-0 min-h-64 overflow-hidden rounded-[22px_22px_22px_7px] border-2 border-cozi-cream/75 bg-cozi-night shadow-2xl sm:min-h-80 lg:rotate-[0.7deg]">
         <img class="absolute inset-0 size-full object-cover" src="/images/moonlit-route-map.webp" width="1586" height="992" alt="A moonlit Minecraft map with a lantern path from a cozy spawn village to a cherry village beside a lake.">
-        <figcaption class="absolute top-4 right-4 rounded-lg border border-cozi-pink bg-cozi-night/75 px-3 py-1.5 text-[0.62rem] font-black uppercase tracking-[0.1em] text-cozi-pink backdrop-blur">Moonlit route</figcaption>
+        <figcaption class="absolute top-4 right-4 rounded-lg border border-cozi-pink bg-cozi-night/75 px-3 py-1.5 text-[0.62rem] font-bold uppercase tracking-[0.1em] text-cozi-pink backdrop-blur">Moonlit route</figcaption>
       </figure>
     </section>
 
@@ -117,7 +117,7 @@ useSeoMeta({
         <Icon name="simple-icons:discord" />
       </span>
       <div>
-        <p class="m-0 text-[0.68rem] font-black uppercase tracking-[0.14em] text-cozi-jade-soft">The CoziCraft community</p>
+        <p class="m-0 text-[0.68rem] font-bold uppercase tracking-[0.14em] text-cozi-jade-soft">The CoziCraft community</p>
         <h2 id="discord-title" class="display-title mt-2 mb-0 text-5xl sm:text-7xl">Join us on Discord.</h2>
         <p class="mt-4 mb-0 max-w-3xl text-cozi-muted">Share your builds, find event times, ask a quick question, or say hello before you join the server.</p>
         <div class="mt-4 flex flex-wrap gap-2">
@@ -133,22 +133,22 @@ useSeoMeta({
 
     <section class="container-cozi py-16 sm:py-24" aria-labelledby="helpful-title">
       <div class="mb-8">
-        <p class="m-0 text-[0.68rem] font-black uppercase tracking-[0.14em] text-cozi-jade">Useful, close by</p>
+        <p class="m-0 text-[0.68rem] font-bold uppercase tracking-[0.14em] text-cozi-jade">Useful, close by</p>
         <h2 id="helpful-title" class="display-title mt-2 mb-0 text-5xl sm:text-7xl">One more lantern.</h2>
       </div>
       <div class="grid gap-3 md:grid-cols-3">
         <article v-if="latestPost" class="rounded-2xl border border-cozi-line bg-white/[0.045] p-6">
           <Icon class="text-2xl text-cozi-jade" name="lucide:newspaper" aria-hidden="true" />
-          <p class="mt-6 mb-0 text-[0.65rem] font-black uppercase tracking-[0.12em] text-cozi-jade">Latest update</p>
-          <h3 class="mt-2 mb-0 font-display text-2xl font-black text-cozi-cream">{{ latestPost.title }}</h3>
+          <p class="mt-6 mb-0 text-[0.65rem] font-bold uppercase tracking-[0.12em] text-cozi-jade">Latest update</p>
+          <h3 class="mt-2 mb-0 font-display text-2xl font-bold text-cozi-cream">{{ latestPost.title }}</h3>
           <p class="mt-2 text-sm text-cozi-muted">{{ latestPost.description }}</p>
-          <NuxtLink class="text-xs font-black uppercase tracking-wider text-cozi-amber" :to="latestPost.path">Read update</NuxtLink>
+          <NuxtLink class="text-xs font-bold uppercase tracking-wider text-cozi-amber" :to="latestPost.path">Read update</NuxtLink>
         </article>
         <NuxtLink v-for="link in helpfulLinks.slice(0, latestPost ? 2 : 3)" :key="link.to" class="rounded-2xl border border-cozi-line bg-white/[0.045] p-6 no-underline transition hover:-translate-y-1 hover:border-cozi-amber" :to="link.to">
           <Icon class="text-2xl text-cozi-jade" :name="link.icon" aria-hidden="true" />
-          <h3 class="mt-6 mb-0 font-display text-2xl font-black text-cozi-cream">{{ link.title }}</h3>
+          <h3 class="mt-6 mb-0 font-display text-2xl font-bold text-cozi-cream">{{ link.title }}</h3>
           <p class="mt-2 text-sm text-cozi-muted">{{ link.description }}</p>
-          <span class="text-xs font-black uppercase tracking-wider text-cozi-amber">{{ link.label }}</span>
+          <span class="text-xs font-bold uppercase tracking-wider text-cozi-amber">{{ link.label }}</span>
         </NuxtLink>
       </div>
     </section>

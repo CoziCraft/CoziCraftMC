@@ -85,11 +85,11 @@
 
 @layer components {
   .display-title {
-    @apply font-display font-black leading-[0.9] tracking-[-0.055em] text-cozi-cream;
+    @apply font-display font-bold leading-[0.94] tracking-[-0.035em] text-cozi-cream;
   }
 
   .eyebrow {
-    @apply m-0 text-xs font-black uppercase tracking-[0.14em] text-cozi-jade;
+    @apply m-0 text-xs font-semibold uppercase tracking-[0.14em] text-cozi-jade;
   }
 
   .eyebrow::before {
@@ -101,15 +101,15 @@
   }
 
   .btn-primary {
-    @apply inline-flex min-h-12 items-center justify-center gap-2 rounded-xl border border-cozi-amber/70 bg-cozi-amber px-5 py-2.5 text-sm font-black text-cozi-night no-underline shadow-[0_12px_30px_rgba(255,199,111,0.17)] transition hover:-translate-y-0.5 hover:bg-cozi-amber-soft focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-cozi-amber/25;
+    @apply inline-flex min-h-12 items-center justify-center gap-2 rounded-xl border border-cozi-amber/70 bg-cozi-amber px-5 py-2.5 text-sm font-bold text-cozi-night no-underline shadow-[0_12px_30px_rgba(255,199,111,0.17)] transition hover:-translate-y-0.5 hover:bg-cozi-amber-soft focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-cozi-amber/25;
   }
 
   .btn-secondary {
-    @apply inline-flex min-h-12 items-center justify-center gap-2 rounded-xl border border-cozi-line bg-white/[0.055] px-5 py-2.5 text-sm font-black text-cozi-cream no-underline transition hover:-translate-y-0.5 hover:border-cozi-amber/60 hover:bg-white/[0.08] focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-cozi-amber/20;
+    @apply inline-flex min-h-12 items-center justify-center gap-2 rounded-xl border border-cozi-line bg-white/[0.055] px-5 py-2.5 text-sm font-bold text-cozi-cream no-underline transition hover:-translate-y-0.5 hover:border-cozi-amber/60 hover:bg-white/[0.08] focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-cozi-amber/20;
   }
 
   .btn-nav-primary {
-    @apply inline-flex min-h-10 items-center justify-center gap-2 rounded-xl bg-cozi-amber px-4 py-2 text-xs font-black uppercase tracking-[0.08em] text-cozi-night no-underline transition hover:bg-cozi-amber-soft;
+    @apply inline-flex min-h-10 items-center justify-center gap-2 rounded-xl bg-cozi-amber px-4 py-2 text-xs font-bold uppercase tracking-[0.08em] text-cozi-night no-underline transition hover:bg-cozi-amber-soft;
   }
 
   .content-prose {
@@ -117,15 +117,15 @@
   }
 
   .content-prose h1 {
-    @apply mb-7 font-display text-5xl font-black leading-[0.9] tracking-[-0.055em] text-cozi-cream sm:text-6xl;
+    @apply mb-7 font-display text-5xl font-bold leading-[0.94] tracking-[-0.035em] text-cozi-cream sm:text-6xl;
   }
 
   .content-prose h2 {
-    @apply mt-12 mb-4 font-display text-3xl font-black leading-tight text-cozi-cream;
+    @apply mt-12 mb-4 font-display text-3xl font-bold leading-tight text-cozi-cream;
   }
 
   .content-prose h3 {
-    @apply mt-8 mb-3 text-xl font-black text-cozi-cream;
+    @apply mt-8 mb-3 text-xl font-semibold text-cozi-cream;
   }
 
   .content-prose p {

@@ -84,8 +84,8 @@ watch(query, runSearch)
 <template>
   <section class="rounded-2xl border border-cozi-line bg-white/[0.045] p-4 shadow-cozi sm:p-5" aria-labelledby="content-search-title">
     <div class="mb-3 flex items-center justify-between gap-3">
-      <h2 id="content-search-title" class="m-0 font-display text-xl font-black text-cozi-cream sm:text-2xl">Search the server guide</h2>
-      <span class="text-[0.65rem] font-black uppercase tracking-wider text-cozi-jade-soft">{{ status }}</span>
+      <h2 id="content-search-title" class="m-0 font-display text-xl font-bold text-cozi-cream sm:text-2xl">Search the server guide</h2>
+      <span class="text-[0.65rem] font-bold uppercase tracking-wider text-cozi-jade-soft">{{ status }}</span>
     </div>
     <label class="sr-only" for="content-search-input">Search wiki, rules, FAQ, and news</label>
     <div class="relative">
@@ -96,7 +96,7 @@ watch(query, runSearch)
     <p v-else-if="isSearching" class="mb-0 mt-3 text-sm font-semibold text-cozi-muted">Searching...</p>
     <div v-if="results.length" class="mt-4 grid gap-2">
       <NuxtLink v-for="result in results" :key="`${result.collection}-${result.id}`" class="rounded-xl border border-cozi-line bg-cozi-night/45 p-3 no-underline transition hover:border-cozi-jade hover:bg-cozi-night/70" :to="resultPath(result)">
-        <span class="text-[0.65rem] font-black uppercase tracking-wider text-cozi-pink">{{ resultLabel(result.collection) }}</span>
+        <span class="text-[0.65rem] font-bold uppercase tracking-wider text-cozi-pink">{{ resultLabel(result.collection) }}</span>
         <strong class="mt-1 block text-cozi-cream">{{ result.title }}</strong>
         <span class="mt-1 line-clamp-2 block text-sm text-cozi-muted">{{ resultSummary(result.content) }}</span>
       </NuxtLink>

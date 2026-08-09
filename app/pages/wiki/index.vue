@@ -34,7 +34,7 @@ useSeoMeta({
         <span class="mb-8 grid size-12 place-items-center rounded-xl bg-cozi-amber text-2xl text-cozi-night transition group-hover:bg-cozi-amber-soft">
           <Icon :name="category.icon" aria-hidden="true" />
         </span>
-        <h2 class="m-0 font-display text-2xl font-black leading-tight text-cozi-cream">{{ pageForCategory(category.path)?.title || category.title }}</h2>
+        <h2 class="m-0 font-display text-2xl font-bold leading-tight text-cozi-cream">{{ pageForCategory(category.path)?.title || category.title }}</h2>
         <p class="mt-2 mb-0 text-sm leading-6 text-cozi-muted">{{ category.description }}</p>
       </NuxtLink>
     </section>

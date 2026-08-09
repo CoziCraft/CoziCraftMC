@@ -40,9 +40,9 @@ useSeoMeta({
       <aside>
         <div class="rounded-2xl border border-cozi-line bg-white/[0.045] p-5 shadow-cozi lg:sticky lg:top-28">
           <span class="mb-5 grid size-12 place-items-center rounded-xl bg-cozi-amber text-2xl text-cozi-night"><Icon :name="sectionIcon" aria-hidden="true" /></span>
-          <p class="m-0 text-xs font-black uppercase tracking-[0.12em] text-cozi-pink">{{ page.section || data?.collection || 'Guide' }}</p>
+          <p class="m-0 text-xs font-bold uppercase tracking-[0.12em] text-cozi-pink">{{ page.section || data?.collection || 'Guide' }}</p>
           <p class="mt-2 mb-0 text-sm leading-6 text-cozi-muted">{{ page.description }}</p>
-          <NuxtLink class="mt-5 inline-flex items-center gap-2 text-xs font-black uppercase tracking-wider text-cozi-amber no-underline" to="/">
+          <NuxtLink class="mt-5 inline-flex items-center gap-2 text-xs font-bold uppercase tracking-wider text-cozi-amber no-underline" to="/">
             <Icon name="lucide:arrow-left" aria-hidden="true" />Home
           </NuxtLink>
         </div>

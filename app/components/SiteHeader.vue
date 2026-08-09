@@ -14,8 +14,8 @@ function closeMenu() {
           <Icon name="lucide:blocks" aria-hidden="true" />
         </span>
         <span class="grid leading-none">
-          <strong class="text-sm font-black uppercase tracking-[0.12em] text-cozi-cream sm:text-base">{{ siteConfig.name }}</strong>
-          <small class="mt-1 text-[0.62rem] font-black uppercase tracking-[0.13em] text-cozi-jade-soft">Moonlit survival</small>
+          <strong class="text-sm font-bold uppercase tracking-[0.12em] text-cozi-cream sm:text-base">{{ siteConfig.name }}</strong>
+          <small class="mt-1 text-[0.62rem] font-bold uppercase tracking-[0.13em] text-cozi-jade-soft">Moonlit survival</small>
         </span>
       </NuxtLink>
 
@@ -39,7 +39,7 @@ function closeMenu() {
         <NuxtLink
           v-for="item in primaryNav"
           :key="item.to"
-          class="rounded-lg px-3 py-3 text-xs font-black uppercase tracking-[0.09em] text-cozi-muted no-underline transition hover:bg-white/[0.05] hover:text-cozi-amber md:py-2 [&.router-link-active]:text-cozi-cream"
+          class="rounded-lg px-3 py-3 text-xs font-bold uppercase tracking-[0.09em] text-cozi-muted no-underline transition hover:bg-white/[0.05] hover:text-cozi-amber md:py-2 [&.router-link-active]:text-cozi-cream"
           :to="item.to"
           @click="closeMenu"
         >
@@ -51,7 +51,7 @@ function closeMenu() {
         </NuxtLink>
       </nav>
 
-      <span class="hidden shrink-0 text-[0.67rem] font-black uppercase tracking-[0.12em] text-cozi-jade-soft xl:block">Minecraft {{ siteConfig.minecraftVersion }}</span>
+      <span class="hidden shrink-0 text-[0.67rem] font-bold uppercase tracking-[0.12em] text-cozi-jade-soft xl:block">Minecraft {{ siteConfig.minecraftVersion }}</span>
     </div>
   </header>
 </template>
