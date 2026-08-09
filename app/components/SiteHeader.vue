@@ -7,18 +7,20 @@ function closeMenu() {
 </script>
 
 <template>
-  <header class="sticky top-0 z-20 border-b border-cozi-line/70 bg-cozi-soft/95 backdrop-blur-xl">
-    <div class="container-cozi flex min-h-16 items-center justify-between gap-4 sm:min-h-[72px]">
-      <NuxtLink class="flex items-center gap-3 no-underline" to="/" aria-label="CoziCraft home" @click="closeMenu">
-        <span class="grid size-10 place-items-center rounded-md border-2 border-cozi-leaf bg-tea-green-500 font-black text-cozi-leaf-dark sm:size-11">C</span>
-        <span>
-          <strong class="block text-lg leading-tight sm:text-xl">{{ siteConfig.name }}</strong>
-          <small class="block text-xs font-bold leading-tight text-cozi-muted">{{ siteConfig.minecraftVersion }}</small>
+  <header class="sticky top-0 z-30">
+    <div class="container-cozi flex min-h-20 items-center justify-between gap-5 rounded-b-2xl border border-t-0 border-cozi-line bg-cozi-night/80 px-4 py-3 shadow-[0_15px_45px_rgba(1,3,13,0.22)] backdrop-blur-xl sm:min-h-22">
+      <NuxtLink class="flex shrink-0 items-center gap-3 no-underline" to="/" aria-label="CoziCraft home" @click="closeMenu">
+        <span class="grid size-11 place-items-center rounded-[14px_14px_14px_5px] bg-[linear-gradient(145deg,#ffc76f,#ee9fc8)] text-xl text-cozi-night shadow-[0_5px_18px_rgba(255,199,111,0.25)]">
+          <Icon name="lucide:blocks" aria-hidden="true" />
+        </span>
+        <span class="grid leading-none">
+          <strong class="text-sm font-black uppercase tracking-[0.12em] text-cozi-cream sm:text-base">{{ siteConfig.name }}</strong>
+          <small class="mt-1 text-[0.62rem] font-black uppercase tracking-[0.13em] text-cozi-jade-soft">Moonlit survival</small>
         </span>
       </NuxtLink>
 
       <button
-        class="grid size-11 place-items-center rounded-md border border-cozi-line bg-cozi-paper text-xl text-cozi-ink shadow-sm md:hidden"
+        class="grid size-11 place-items-center rounded-xl border border-cozi-line bg-white/[0.055] text-xl text-cozi-cream md:hidden"
         type="button"
         :aria-expanded="isOpen"
         :aria-label="isOpen ? 'Close navigation' : 'Open navigation'"
@@ -30,27 +32,26 @@ function closeMenu() {
 
       <nav
         id="site-navigation"
-        class="absolute inset-x-4 top-16 max-h-[calc(100svh-5rem)] flex-col items-stretch gap-1 overflow-auto rounded-lg border border-cozi-line bg-cozi-paper p-3 shadow-cozi sm:top-[72px] md:static md:max-h-none md:flex-row md:items-center md:overflow-visible md:border-0 md:bg-transparent md:p-0 md:shadow-none"
+        class="absolute inset-x-3 top-[4.7rem] max-h-[calc(100svh-6rem)] flex-col gap-1 overflow-auto rounded-2xl border border-cozi-line bg-cozi-night-soft p-3 shadow-cozi md:static md:max-h-none md:flex-row md:items-center md:gap-1 md:overflow-visible md:border-0 md:bg-transparent md:p-0 md:shadow-none"
         :class="isOpen ? 'flex' : 'hidden md:flex'"
         aria-label="Primary navigation"
       >
         <NuxtLink
           v-for="item in primaryNav"
           :key="item.to"
-          class="rounded-md px-3 py-3 font-extrabold text-cozi-muted no-underline hover:bg-cozi-leaf/10 hover:text-cozi-ink md:py-2 [&.router-link-active]:bg-cozi-leaf/10 [&.router-link-active]:text-cozi-ink"
+          class="rounded-lg px-3 py-3 text-xs font-black uppercase tracking-[0.09em] text-cozi-muted no-underline transition hover:bg-white/[0.05] hover:text-cozi-amber md:py-2 [&.router-link-active]:text-cozi-cream"
           :to="item.to"
           @click="closeMenu"
         >
           {{ item.label }}
         </NuxtLink>
-        <NuxtLink
-          class="btn-nav-primary"
-          to="/play"
-          @click="closeMenu"
-        >
+        <NuxtLink class="btn-nav-primary mt-1 md:mt-0 md:ml-2" to="/play" @click="closeMenu">
+          <Icon name="lucide:gamepad-2" aria-hidden="true" />
           Join
         </NuxtLink>
       </nav>
+
+      <span class="hidden shrink-0 text-[0.67rem] font-black uppercase tracking-[0.12em] text-cozi-jade-soft xl:block">Minecraft {{ siteConfig.minecraftVersion }}</span>
     </div>
   </header>
 </template>

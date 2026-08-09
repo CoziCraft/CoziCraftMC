@@ -2,6 +2,20 @@
 const copied = ref(false)
 const copyFailed = ref(false)
 
+function copyWithSelectionFallback() {
+  const input = document.createElement('textarea')
+  input.value = siteConfig.serverAddress
+  input.setAttribute('readonly', '')
+  input.style.position = 'fixed'
+  input.style.opacity = '0'
+  document.body.appendChild(input)
+  input.select()
+
+  const didCopy = document.execCommand('copy')
+  input.remove()
+  return didCopy
+}
+
 async function copyAddress() {
   copied.value = false
   copyFailed.value = false
@@ -14,24 +28,31 @@ async function copyAddress() {
     }, 2000)
   }
   catch {
-    copyFailed.value = true
+    try {
+      copied.value = copyWithSelectionFallback()
+      copyFailed.value = !copied.value
+    }
+    catch {
+      copyFailed.value = true
+    }
   }
 }
 </script>
 
 <template>
-  <div class="grid items-center gap-3 rounded-lg border border-cozi-line bg-cozi-paper/90 p-3 shadow-cozi sm:grid-cols-[minmax(0,1fr)_auto] sm:p-4" aria-live="polite">
-    <div class="min-w-0">
-      <span class="block text-xs font-extrabold text-cozi-muted">Server IP</span>
-      <code class="block break-words text-xl font-black leading-tight tracking-tight text-cozi-ink sm:text-2xl">{{ siteConfig.serverAddress }}</code>
-      <small class="block text-xs font-extrabold text-cozi-muted">{{ siteConfig.minecraftVersion }}</small>
+  <div class="rounded-2xl border border-cozi-line bg-[linear-gradient(135deg,rgba(43,28,61,0.92),rgba(21,29,62,0.92))] p-4 shadow-[0_18px_50px_rgba(0,0,0,0.2)] sm:p-[1.125rem]" aria-live="polite">
+    <div class="mb-2.5 flex items-center justify-between gap-3 text-[0.68rem] font-black uppercase tracking-[0.1em] text-cozi-jade-soft">
+      <span class="inline-flex items-center gap-2"><Icon name="lucide:radio-tower" aria-hidden="true" />Ready to join?</span>
+      <span class="rounded-full bg-cozi-jade-soft px-2.5 py-1 text-cozi-night">{{ siteConfig.minecraftVersion }}</span>
     </div>
-    <button class="btn-primary w-full sm:w-auto" type="button" @click="copyAddress">
-      <Icon :name="copied ? 'lucide:check' : 'lucide:copy'" aria-hidden="true" />
-      {{ copied ? 'Copied' : 'Copy IP' }}
-    </button>
-    <p v-if="copyFailed" class="m-0 text-sm text-light-bronze-300 sm:col-span-2">
-      Copy failed. Select the address above and copy it manually.
-    </p>
+    <div class="grid gap-2.5 sm:grid-cols-[minmax(0,1fr)_auto]">
+      <code class="flex min-h-12 min-w-0 items-center overflow-hidden rounded-xl border border-cozi-jade-soft/25 bg-cozi-night/45 px-3.5 text-sm font-bold text-cozi-cream sm:text-base">{{ siteConfig.serverAddress }}</code>
+      <button class="inline-flex min-h-12 items-center justify-center gap-2 rounded-xl border-0 bg-cozi-pink px-4 text-xs font-black uppercase tracking-[0.07em] text-cozi-night transition hover:bg-cozi-amber" type="button" @click="copyAddress">
+        <Icon :name="copied ? 'lucide:check' : 'lucide:copy'" aria-hidden="true" />
+        {{ copied ? 'Copied' : 'Copy address' }}
+      </button>
+    </div>
+    <p v-if="copyFailed" class="mb-0 mt-2 text-xs font-bold text-cozi-amber-soft">Copy failed. Select the address and copy it manually.</p>
+    <p v-else-if="copied" class="mb-0 mt-2 text-xs font-bold text-cozi-jade-soft">The server address is ready to paste.</p>
   </div>
 </template>

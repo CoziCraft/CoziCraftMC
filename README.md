@@ -63,16 +63,19 @@ For v1, edit content through GitHub commits or pull requests. Keep private moder
 
 ## Deployment
 
-The app can generate static output:
+The production site uses GitHub Pages. A push to `master` runs the full CI checks, generates the static site, and deploys `.output/public` through GitHub Actions.
+
+You can generate the same static output locally:
 
 ```bash
 npm run generate
 ```
 
-Railway is also supported for simplicity:
+The GitHub Pages deployment uses `https://cozicraftmc.com` as the public site URL. Configure these optional public repository variables under **Settings → Secrets and variables → Actions → Variables**:
 
-- Build command: `npm run build`
-- Start command: `npm run start`
+- `NUXT_PUBLIC_DISCORD_URL`
+- `NUXT_PUBLIC_TEBEX_STORE_URL`
+- `NUXT_PUBLIC_CONTACT_URL`
 
 Optional public environment variables are listed in `.env.example`. They are safe public URLs only; do not add secrets to this static site.
 

@@ -1,29 +1,21 @@
 <script setup lang="ts">
 const runtimeConfig = useRuntimeConfig()
 
-const contactUrl = computed(() => {
-  return cleanOptionalUrl(runtimeConfig.public.contactUrl) || siteConfig.fallbackContactUrl
-})
+const contactUrl = computed(() => cleanOptionalUrl(runtimeConfig.public.contactUrl) || siteConfig.fallbackContactUrl)
 </script>
 
 <template>
-  <footer class="border-t border-cozi-line bg-cozi-paper/80 py-8">
-    <div class="container-cozi flex flex-col gap-5 md:flex-row md:items-start md:justify-between">
-      <div>
-        <strong>{{ siteConfig.name }}</strong>
-        <p class="mt-1 max-w-2xl text-sm text-cozi-muted">{{ siteConfig.disclaimer }}</p>
+  <footer class="container-cozi mt-16 grid gap-6 border-t border-cozi-line py-8 text-xs text-cozi-muted md:grid-cols-[1fr_auto] md:items-start">
+    <div>
+      <div class="mb-3 flex items-center gap-2 font-black text-cozi-cream">
+        <Icon name="lucide:blocks" aria-hidden="true" />
+        {{ siteConfig.name }}
       </div>
-      <nav class="flex flex-wrap gap-3 md:justify-end" aria-label="Footer navigation">
-        <NuxtLink
-          v-for="item in footerNav"
-          :key="item.to"
-          class="font-extrabold text-cozi-muted no-underline hover:text-cozi-ink"
-          :to="item.to"
-        >
-          {{ item.label }}
-        </NuxtLink>
-        <a class="font-extrabold text-cozi-muted no-underline hover:text-cozi-ink" :href="contactUrl">Email</a>
-      </nav>
+      <p class="m-0 max-w-2xl text-[0.68rem] font-bold uppercase leading-5 tracking-[0.04em]">{{ siteConfig.disclaimer }}</p>
     </div>
+    <nav class="flex flex-wrap gap-x-5 gap-y-3 md:justify-end" aria-label="Footer navigation">
+      <NuxtLink v-for="item in footerNav" :key="item.to" class="font-black text-cozi-muted no-underline hover:text-cozi-amber" :to="item.to">{{ item.label }}</NuxtLink>
+      <a class="font-black text-cozi-muted no-underline hover:text-cozi-amber" :href="contactUrl">Email</a>
+    </nav>
   </footer>
 </template>

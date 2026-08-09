@@ -14,7 +14,7 @@ describe('site config', () => {
       'Play',
       'Wiki',
       'News',
-      'FAQ',
+      'Discord',
       'Store',
     ])
   })

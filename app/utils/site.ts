@@ -16,7 +16,7 @@ export const siteConfig = {
   name: 'CoziCraft',
   serverAddress: 'play.cozicraftmc.com',
   minecraftVersion: 'Java 1.21.11',
-  tagline: 'A bright Minecraft Java survival community with polished guides and a cozy pace.',
+  tagline: 'Build under the cherry trees, keep too many pets, and make a corner of CoziCraft feel like yours.',
   description: 'Find the CoziCraft server address, joining guide, wiki, rules, FAQs, news, and store links.',
   fallbackContactUrl: 'mailto:hello@cozicraftmc.com',
   disclaimer: 'NOT AN OFFICIAL MINECRAFT SERVICE. NOT APPROVED BY OR ASSOCIATED WITH MOJANG OR MICROSOFT.',
@@ -26,11 +26,13 @@ export const primaryNav: SiteLink[] = [
   { label: 'Play', to: '/play', description: 'Join the Java server' },
   { label: 'Wiki', to: '/wiki', description: 'Guides and server knowledge' },
   { label: 'News', to: '/news', description: 'Latest updates' },
-  { label: 'FAQ', to: '/faq', description: 'Common questions' },
+  { label: 'Discord', to: '/#discord', description: 'Community chat and event notices' },
   { label: 'Store', to: '/store', description: 'Support and purchases' },
 ]
 
 export const footerNav: SiteLink[] = [
+  { label: 'Wiki', to: '/wiki' },
+  { label: 'FAQ', to: '/faq' },
   { label: 'Rules', to: '/rules' },
   { label: 'Contact', to: '/contact' },
 ]
