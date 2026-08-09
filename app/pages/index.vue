@@ -5,6 +5,7 @@ const runtimeConfig = useRuntimeConfig()
 const discordUrl = computed(() => cleanOptionalUrl(runtimeConfig.public.discordUrl))
 const reducedMotion = useReducedMotion()
 const fishControls = useAnimationControls()
+const pickaxeControls = useAnimationControls()
 const revealTarget = { opacity: 1, y: 0 }
 
 function revealInitial(distance = 16) {
@@ -59,6 +60,55 @@ function returnFishFromLeft() {
     y: [1, -2, 0],
     transition: { duration: 0.48 },
   })
+}
+
+function resetPickaxe() {
+  pickaxeControls.set({ rotate: 0, x: 0, y: 0 })
+}
+
+function startMining() {
+  if (reducedMotion.value) {
+    resetPickaxe()
+    return
+  }
+
+  pickaxeControls.stop()
+  void pickaxeControls.start({
+    rotate: [0, -28, 10, -24, 7, 0],
+    x: [0, -2, 1, -1, 1, 0],
+    y: [0, -2, 2, -1, 1, 0],
+    transition: {
+      duration: 0.72,
+      ease: 'easeInOut',
+      repeat: Infinity,
+      repeatDelay: 0.08,
+    },
+  })
+}
+
+function stopMining() {
+  if (reducedMotion.value) {
+    resetPickaxe()
+    return
+  }
+
+  pickaxeControls.stop()
+  void pickaxeControls.start({
+    rotate: 0,
+    x: 0,
+    y: 0,
+    transition: { duration: 0.16 },
+  })
+}
+
+function handleAdventurePointerEnter(title: string) {
+  if (title === 'Fish RPG') swimFishAway()
+  if (title === 'Go mining') startMining()
+}
+
+function handleAdventurePointerLeave(title: string) {
+  if (title === 'Fish RPG') returnFishFromLeft()
+  if (title === 'Go mining') stopMining()
 }
 
 function adventureIconVariants() {
@@ -124,7 +174,6 @@ useSeoMeta({
             :transition="revealTransition()"
           />
           <span class="absolute top-3 left-3 rounded-full border border-white/20 bg-cozi-plum/85 px-3 py-1.5 text-[0.62rem] font-bold uppercase tracking-[0.1em] text-cozi-pink backdrop-blur sm:top-5 sm:left-5">Cherry village · map tile 004</span>
-          <span class="absolute top-5 right-5 hidden rounded-full border border-white/20 bg-cozi-night/75 px-3 py-1.5 text-[0.62rem] font-bold uppercase tracking-[0.1em] text-cozi-jade-soft backdrop-blur sm:block">Spawn → lantern square</span>
           <figcaption class="absolute right-3 bottom-3 left-3 flex items-end justify-between gap-4 rounded-2xl border border-white/15 bg-cozi-night/85 px-4 py-3 backdrop-blur sm:right-5 sm:bottom-5 sm:left-5 sm:px-5 sm:py-4">
             <span>
               <strong class="block font-display text-lg font-bold leading-tight text-cozi-cream sm:text-2xl">Follow the lights home.</strong>
@@ -183,9 +232,9 @@ useSeoMeta({
               class="mb-8 grid size-11 place-items-center rounded-xl bg-cozi-amber text-xl text-cozi-night transition group-hover:bg-cozi-amber-soft"
               initial="resting"
               while-hover="hovered"
-              :data-testid="adventure.title === 'Fish RPG' ? 'fish-rpg-icon-trigger' : undefined"
-              @pointerenter="adventure.title === 'Fish RPG' && swimFishAway()"
-              @pointerleave="adventure.title === 'Fish RPG' && returnFishFromLeft()"
+              :data-testid="adventure.title === 'Fish RPG' ? 'fish-rpg-icon-trigger' : adventure.title === 'Go mining' ? 'mining-icon-trigger' : undefined"
+              @pointerenter="handleAdventurePointerEnter(adventure.title)"
+              @pointerleave="handleAdventurePointerLeave(adventure.title)"
             >
               <motion.span
                 v-if="adventure.title === 'Fish RPG'"
@@ -193,6 +242,15 @@ useSeoMeta({
                 data-testid="fish-rpg-icon"
                 :animate="fishControls"
                 :initial="{ opacity: 1, rotate: 0, scale: 1, x: 0, y: 0 }"
+              >
+                <Icon :name="adventure.icon" aria-hidden="true" />
+              </motion.span>
+              <motion.span
+                v-else-if="adventure.title === 'Go mining'"
+                class="inline-flex [transform-origin:75%_75%]"
+                data-testid="mining-icon"
+                :animate="pickaxeControls"
+                :initial="{ rotate: 0, x: 0, y: 0 }"
               >
                 <Icon :name="adventure.icon" aria-hidden="true" />
               </motion.span>
@@ -276,8 +334,8 @@ useSeoMeta({
       :transition="revealTransition()"
     >
       <div class="mb-8">
-        <p class="m-0 text-[0.68rem] font-bold uppercase tracking-[0.14em] text-cozi-jade">Useful, close by</p>
-        <h2 id="helpful-title" class="display-title mt-2 mb-0 text-5xl sm:text-7xl">One more lantern.</h2>
+        <p class="m-0 text-[0.68rem] font-bold uppercase tracking-[0.14em] text-cozi-jade">Good things to know</p>
+        <h2 id="helpful-title" class="display-title mt-2 mb-0 text-5xl sm:text-7xl">Keep these close.</h2>
       </div>
       <div class="grid gap-3 md:grid-cols-3">
         <article v-if="latestPost" class="rounded-2xl border border-cozi-line bg-white/[0.045] p-6">

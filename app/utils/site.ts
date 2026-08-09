@@ -59,7 +59,7 @@ export const wikiCategories: WikiCategory[] = [
   {
     title: 'Claims',
     path: '/wiki/claims',
-    description: 'Protect builds and understand land ownership.',
+    description: 'Use Towny to protect builds, manage plots, and share land.',
     icon: 'lucide:shield-check',
   },
   {

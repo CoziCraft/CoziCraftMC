@@ -6,6 +6,7 @@ order: 1
 tags:
   - start
   - join
+  - towny
 ---
 
 # Getting Started
@@ -20,9 +21,18 @@ Use Minecraft Java Edition and connect to `play.cozicraftmc.com` on version `26.
 
 1. Read the [Rules](/rules).
 2. Join the server.
-3. Find a place to build that is not inside another player's area.
-4. Claim land before investing too much time in a build.
-5. Ask staff or trusted community members if a rule is unclear.
+3. Use `/town nearby` or `/town list by open` to find a town.
+4. Use `/invite list` after a town invites you, then use `/invite accept <town>`.
+5. Read [Towns and Claims](/wiki/claims) before you start a large build.
+
+## Towny First Steps
+
+- `/towny map` shows protected land near you.
+- `/town here` tells you who owns the land where you stand.
+- `/town spawn` takes you back to your town.
+- `/resident` shows your town and personal plots.
+
+Want to make a new town? Check `/towny prices` first, then use `/town new <name>` where you want the town homeblock.
 
 ## What To Read Next
 

@@ -15,7 +15,6 @@ function closeMenu() {
         </span>
         <span class="grid leading-none">
           <strong class="text-sm font-bold uppercase tracking-[0.12em] text-cozi-cream sm:text-base">{{ siteConfig.name }}</strong>
-          <small class="mt-1 text-[0.62rem] font-bold uppercase tracking-[0.13em] text-cozi-jade-soft">Moonlit survival</small>
         </span>
       </NuxtLink>
 

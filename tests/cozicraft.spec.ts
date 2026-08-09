@@ -22,6 +22,22 @@ test('home page exposes the CoziCraft join path', async ({ page }) => {
   })
   expect(returningFishX).toBeLessThan(0)
   await expect(page.getByTestId('fish-rpg-icon')).toHaveCSS('opacity', '1')
+
+  await page.getByTestId('mining-icon-trigger').hover()
+  await expect.poll(async () => {
+    return page.getByTestId('mining-icon').evaluate((element) => {
+      const transform = new DOMMatrixReadOnly(getComputedStyle(element).transform)
+      return Math.abs(transform.b) + Math.abs(transform.c)
+    })
+  }).toBeGreaterThan(0.1)
+
+  await page.getByRole('heading', { name: 'Make the night yours.' }).hover()
+  await expect.poll(async () => {
+    return page.getByTestId('mining-icon').evaluate((element) => {
+      const transform = new DOMMatrixReadOnly(getComputedStyle(element).transform)
+      return Math.abs(transform.b) + Math.abs(transform.c)
+    })
+  }).toBeLessThan(0.01)
 })
 
 test('wiki page lists categories and searches public content', async ({ page }) => {
@@ -31,7 +47,12 @@ test('wiki page lists categories and searches public content', async ({ page }) 
   await expect(page.getByRole('link', { name: /Getting Started/ })).toBeVisible()
 
   await page.getByPlaceholder('Search wiki, rules, FAQ, and news').fill('claims')
-  await expect(page.getByRole('region', { name: 'Search The Server Guide' }).getByRole('link', { name: /Claims/ })).toBeVisible()
+  await expect(page.getByRole('region', { name: 'Search The Server Guide' }).locator('a[href="/wiki/claims"]').first()).toBeVisible()
+
+  await page.goto('/wiki/commands')
+  await expect(page.getByRole('heading', { name: 'Commands', exact: true })).toBeVisible()
+  await expect(page.getByText('/towny map', { exact: true })).toBeVisible()
+  await expect(page.getByRole('link', { name: 'official Towny command reference' })).toHaveAttribute('href', 'https://github.com/TownyAdvanced/Towny/wiki/Towny-Commands')
 })
 
 test('mobile home keeps the join flow polished and compact', async ({ page }) => {
