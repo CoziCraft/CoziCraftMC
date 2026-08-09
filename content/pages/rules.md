@@ -1,6 +1,6 @@
 ---
-title: Rules
-description: The public rules page for CoziCraft players.
+title: Game Rules
+description: The five game rules for the CoziCraft community.
 section: Rules
 order: 2
 tags:
@@ -8,24 +8,24 @@ tags:
   - community
 ---
 
-# Rules
+# Game Rules
 
-CoziCraft should feel safe, fair, and welcoming. These rules are the public baseline for players and contributors.
+## 1. Kindness First
 
-## Community Basics
+Be friendly, respectful, and welcoming to all players.
 
-- Be kind to other players.
-- Do not grief, steal, scam, or harass.
-- Keep chat appropriate for a broad Minecraft community.
-- Respect staff decisions and ask for help calmly.
-- Do not use hacked clients, exploits, or automation that creates unfair play.
+## 2. No Griefing or Stealing
 
-## Build And Land Respect
+Don’t harm others’ builds, belongings, or progress.
 
-- Do not modify another player's build without permission.
-- Leave space around claimed or clearly active builds.
-- Ask before starting large projects near towns, public paths, or shared landmarks.
+## 3. Cozy Chat Only
 
-## More Detail
+Keep chat positive and safe—no spam, hate, or toxicity.
 
-The wiki can expand these rules as the server grows. Start with the [Rules wiki page](/wiki/rules) for editor notes and future detail.
+## 4. Fair Play
+
+No cheats, exploits, or hacks of any kind.
+
+## 5. Community Spirit
+
+Build and play in a way that adds to the cozy vibe.
