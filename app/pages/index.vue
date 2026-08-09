@@ -74,14 +74,14 @@ function startMining() {
 
   pickaxeControls.stop()
   void pickaxeControls.start({
-    rotate: [0, -28, 10, -24, 7, 0],
-    x: [0, -2, 1, -1, 1, 0],
-    y: [0, -2, 2, -1, 1, 0],
+    rotate: [0, -14, 5, 0],
+    x: [0, -1, 0, 0],
+    y: [0, -1, 1, 0],
     transition: {
-      duration: 0.72,
+      duration: 0.65,
       ease: 'easeInOut',
       repeat: Infinity,
-      repeatDelay: 0.08,
+      repeatDelay: 0.45,
     },
   })
 }
