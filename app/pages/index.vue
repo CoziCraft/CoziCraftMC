@@ -59,7 +59,6 @@ useSeoMeta({
         :animate="{ y: 0, opacity: 1 }"
         :transition="{ duration: 0.4, delay: 0.08 }"
       >
-        <p class="eyebrow mb-4">CoziCraft · cute Java survival</p>
         <h1 class="display-title m-0 max-w-[9ch] text-[clamp(3.7rem,16vw,5rem)] sm:text-7xl lg:text-[clamp(4.4rem,6.5vw,7.5rem)]">Your next <em class="not-italic text-cozi-pink [text-shadow:0_10px_35px_rgba(238,159,200,0.22)]">little world.</em></h1>
         <p class="mt-6 mb-0 max-w-xl text-base font-medium leading-7 text-cozi-muted sm:text-lg">{{ siteConfig.tagline }}</p>
         <div class="my-6 flex flex-wrap gap-3">

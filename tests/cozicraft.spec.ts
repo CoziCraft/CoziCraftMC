@@ -4,6 +4,7 @@ test('home page exposes the CoziCraft join path', async ({ page }) => {
   await page.goto('/')
 
   await expect(page.getByRole('heading', { name: 'Your next little world.' })).toBeVisible()
+  await expect(page.getByText('CoziCraft · cute Java survival', { exact: true })).toHaveCount(0)
   await expect(page.getByText('play.cozicraftmc.com')).toBeVisible()
   await expect(page.locator('#main-content').getByText('Java 26.2', { exact: true }).first()).toBeVisible()
   await expect(page.getByLabel('Primary navigation').getByRole('link', { name: 'Wiki' })).toBeVisible()
